@@ -1,0 +1,28 @@
+{
+  "name": "push",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/italomaio/push-notification.git"
+  },
+  "author": "Italo Maio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/italomaio/push-notification/issues"
+  },
+  "homepage": "https://github.com/italomaio/push-notification#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "web-push": "^3.3.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  }
+}
