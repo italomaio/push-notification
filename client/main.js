@@ -3,7 +3,9 @@
     const publicVapidKey = "BK9Z1AvDq84Oz5nWzgJdACVpkOCkH1Pbsghmm7G1OOQ2FbKpCHPqQ7r6BJ6Gcbq0qREhSGGbM9UICNDpIQKteWA"
 
     if ('serviceWorker' in navigator) {
-        send().catch(err => console.error(err))
+        send()
+        .then(resp => console.log(resp))
+        .catch(err => console.error(err))
     }
 
     function urlBase64ToUint8Array(base64String) {
@@ -22,6 +24,7 @@
     }
 
     async function send() {
+
         const register = await navigator.serviceWorker.register('/sw.js', {
             scope: '/'
         })
@@ -38,6 +41,8 @@
                 'content-type': 'application/json'
             }
         })
+        .then(resp => console.log(resp))
+        .catch(err => console.error(err))
     }
 
 })()
