@@ -10,4 +10,11 @@ router.post('/subscribe', (req, res, next) => {
       .catch(err => res.send(err).json())
 })
 
+router.post("/notify", (req, res, next) => {
+  push
+    .notify(req, res, next)
+    .then(resp => res.send(resp).json())
+    .catch(err => res.send(err).json());
+});
+
 export default router

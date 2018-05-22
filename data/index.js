@@ -10,6 +10,17 @@ import Subscription from '../data/model/subscription'
 
 export default {
 
+    get: () => {
+        return new Promise((resolve, reject) => {
+
+            Subscription
+                .find()
+                .then(resp => resolve(resp))
+                .catch(err => reject(err))
+
+        })
+    },
+
     insert: (data) => {
         return new Promise((resolve, reject) => {
 
