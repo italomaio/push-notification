@@ -5,6 +5,12 @@ import app from './app'
 
     const publicVapidKey = "BK9Z1AvDq84Oz5nWzgJdACVpkOCkH1Pbsghmm7G1OOQ2FbKpCHPqQ7r6BJ6Gcbq0qREhSGGbM9UICNDpIQKteWA"
 
+    window.onload = () => {
+        if (Notification.permission != "granted") {
+            Notification.requestPermission()
+        }
+    }
+
     if ('serviceWorker' in navigator) {
         send()
         .then(resp => console.log(resp))

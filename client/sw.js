@@ -1,9 +1,5 @@
 console.log("SW Loaded")
 
-if (Notification.permission != "granted") {
-    Notification.requestPermission()
-}
-
 self.addEventListener('push', e => {
     const data = e.data.json()
 
