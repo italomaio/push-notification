@@ -23,6 +23,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "v4.0.0-alpha.0",
