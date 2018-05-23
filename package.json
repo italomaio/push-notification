@@ -17,11 +17,25 @@
   },
   "homepage": "https://github.com/italomaio/push-notification#readme",
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.18",
+    "angular": "^1.7.0",
+    "angularjs": "0.0.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
     "body-parser": "^1.18.3",
+    "css-loader": "^0.28.11",
     "express": "^4.16.3",
+    "extract-text-webpack-plugin": "v4.0.0-alpha.0",
+    "mini-css-extract-plugin": "^0.4.0",
     "mongodb": "^3.1.0-beta4",
     "mongoose": "^5.1.2",
-    "web-push": "^3.3.1"
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "web-push": "^3.3.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
