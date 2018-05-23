@@ -13,3 +13,8 @@ self.addEventListener('push', e => {
     
     self.registration.showNotification(data.title, options)
 })
+
+self.addEventListener('pushsubscriptionchange', function() {
+  // remove the entry from DB
+  console.log("Mudou a inscricao")
+})

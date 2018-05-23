@@ -5,16 +5,46 @@ import app from './app'
 
     const publicVapidKey = "BK9Z1AvDq84Oz5nWzgJdACVpkOCkH1Pbsghmm7G1OOQ2FbKpCHPqQ7r6BJ6Gcbq0qREhSGGbM9UICNDpIQKteWA"
 
-    window.onload = () => {
+    $(document).ready(function(){
         if (Notification.permission != "granted") {
             Notification.requestPermission()
         }
-    }
+    })
 
     if ('serviceWorker' in navigator) {
-        send()
-        .then(resp => console.log(resp))
-        .catch(err => console.error(err))
+
+        navigator.serviceWorker.register('/sw.js', {
+            scope: '/'
+        })
+        .then(register => {
+            register.pushManager.getSubscription()
+                .then(resp => {
+                    if (!resp) {
+
+                        register.pushManager.subscribe({
+                            userVisibleOnly: true,
+                            applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
+                        })
+                        .then(subscription => {
+                            
+                            fetch('/subscribe', {
+                                method: 'POST',
+                                body: JSON.stringify(subscription),
+                                headers: {
+                                    'content-type': 'application/json'
+                                }
+                            })
+                            .then(resp => console.log("Registrou no banco"))
+                            .catch(err => console.error(err))
+
+                        })
+
+                    } else {
+
+                    }
+                })
+        })
+
     }
 
     function urlBase64ToUint8Array(base64String) {
